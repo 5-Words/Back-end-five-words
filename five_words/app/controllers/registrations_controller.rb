@@ -22,7 +22,6 @@ class RegistrationsController < ApplicationController
 
 		@user = User.find_by(username: params[:username])
 		if @user && @user.authenticate(params[:password])
-			binding.pry
 			render "login.json.jbuilder", status: :ok
 		else
 			render json: {error: "Could not find user for #{params[:username]} or wrong password." },
