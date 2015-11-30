@@ -15,7 +15,7 @@ class WordsController < ApplicationController
 
 		@words = 	Word.where(category: params[:category])
 		render "word_create.json.jbuilder"
-		binding.pry
+	
 	end
 
 
