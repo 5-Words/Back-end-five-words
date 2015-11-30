@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   post "/signup", to: "registrations#create"
   post "/login", to: "registrations#login"
-  delete "delete", to: "registrations#destroy"
+  delete "/delete", to: "registrations#destroy"
+
+  post "/create", to: "words#create"
 
   # Example resource route with options:
   #   resources :products do

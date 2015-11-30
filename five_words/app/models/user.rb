@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+	has_many :words
 	
 	has_secure_password
 	before_validation :ensure_access_token!
