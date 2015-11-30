@@ -1,0 +1,1 @@
+json.array! @word, :word, :category

@@ -1,17 +1,21 @@
 class WordsController < ApplicationController
 
-	def create
+	def create_1
 		
-		@word = current_user.words.new(word: params[:one], word_2: params[:two],
-																	 word_3: params[:three], word_4: params[:four],
-																	 word_5: params[:five], category: params[:category])
-		if @word.save
-				render "word_create.json.jbuilder"
-			else
-				render json: {errors: @word.errors.full_message },
-				status: :unprocessable_entity
-			end
+		current_user.words.create(word: params[:one], 
+														  category: params[:category])
+		current_user.words.create(word: params[:two],
+															category: params[:category])
+		current_user.words.create(word: params[:three],
+															category: params[:category])
+		current_user.words.create(word: params[:four],
+															category: params[:category])
+		current_user.words.create(word: params[:five],
+															category: params[:category])
 
+		@words = 	Word.where(category: params[:category])
+		render "word_create.json.jbuilder"
+		binding.pry
 	end
 
 

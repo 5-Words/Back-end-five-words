@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   post "/login", to: "registrations#login"
   delete "/delete", to: "registrations#destroy"
 
-  post "/create", to: "words#create"
+  post "/create", to: "words#create_1"
+  post "/create", to: "words#create_2"
 
   # Example resource route with options:
   #   resources :products do
