@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
 
-	def create_1
+	def create
 		
 		current_user.words.create(word: params[:one], 
 														  category: params[:category])
@@ -15,8 +15,20 @@ class WordsController < ApplicationController
 
 		@words = 	Word.where(category: params[:category])
 		render "word_create.json.jbuilder"
-	
 	end
+
+	def search_category
+		@words = 	Word.where(category: params[:category])
+		render "word_create.json.jbuilder"
+	end
+
+
+	def match
+		@words = Word.where(word: params[:word], 
+												category: params[:category])
+				render "word_create.json.jbuilder"
+	end
+
 
 
 end

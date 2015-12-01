@@ -20,8 +20,9 @@ Rails.application.routes.draw do
   post "/login", to: "registrations#login"
   delete "/delete", to: "registrations#destroy"
 
-  post "/create", to: "words#create_1"
-  post "/create", to: "words#create_2"
+  post "/create", to: "words#create"
+  get "/category/:category", to: "words#search_category"
+  get "/match/:word/:category", to: "words#match"
 
   # Example resource route with options:
   #   resources :products do
