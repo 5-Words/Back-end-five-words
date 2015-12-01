@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   delete "/delete", to: "registrations#destroy"
 
   post "/create", to: "words#create"
+
+  #get "/words/match", to: "words#match"
+  #get "/words/category", to: "words#search_category"
+  #get "/users/:id/words", to: "words#user_words"
+
+
+  get "/words/:user_id/:category", to: "words#user_words"
   get "/category/:category", to: "words#search_category"
   get "/match/:word/:category", to: "words#match"
 
