@@ -92,6 +92,18 @@ This will return this json which is all the current words in a category across a
   },
 ```
 
+##Searching Users <a id="search"></a>
+
+There are three different routes for searching users
+
+###GET "/words/:user_id/:category"
+
+####This will
+
+**Params**
+
+
+
 
 
 
