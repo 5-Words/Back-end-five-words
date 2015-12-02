@@ -12,6 +12,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 2. [Sign In](#sign_in)
 3. [Add words to Categories](#create_words)
 4. [Matching Words](#search)
+5. [Editing Words](#editing)
 
 ##Create User <a id="create_user"></a>
 
@@ -93,6 +94,15 @@ This will return this json which is all the current words in a category across a
     "user_id": 5
   },
 ```
+
+##Editing Words <a id="editing"></a>
+
+###PUT /edit
+
+**Params**
+
+* `id:` The id of the word you wish to edit
+* `word:` What you wish to cange the word to
 
 ##Searching Users <a id="search"></a>
 

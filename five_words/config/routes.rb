@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete "/delete", to: "registrations#destroy"
 
   post "/create", to: "words#create"
+  put "/edit", to: "words#edit"
 
   #get "/words/match", to: "words#match"
   #get "/words/category", to: "words#search_category"
