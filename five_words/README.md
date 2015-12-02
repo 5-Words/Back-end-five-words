@@ -4,6 +4,8 @@
 
 This is an API for my teams application called 5-Words. This database stores a users interests and matches them to other users with the same interests.
 
+##For creating or editing word the `access_token` that is generated on login or signup must passed in the header
+
 ##Table of Contents
 
 1. [Create User](#create_user)
@@ -98,9 +100,31 @@ There are three different routes for searching users
 
 ###GET "/words/:user_id/:category"
 
-####This will
+####This will return a json object of all the words a user has in the selected category
 
 **Params**
+
+* `user_id:`
+* `category:`
+
+###GET "/category/:category/"
+
+**Params**
+
+* `category:`
+
+####This will return all words in the database for the selected category
+
+**Params**
+
+* `word:`
+* `category:`
+
+###GET "/match/:word/:category/"
+
+####This will return user information by matching words that are in the specified category
+
+
 
 
 
