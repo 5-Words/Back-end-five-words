@@ -6,6 +6,6 @@ class Word < ActiveRecord::Base
 	validates :category, inclusion: { in: %w(travel golden tech sports
 																					 foodie cars books music film
 																					 pets),
-    message: "%{value} is not a valid category" }
+    message: "%{category} is not a valid category" }
 end
 

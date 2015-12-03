@@ -97,7 +97,7 @@ This will return this json which is all the current words in a category across a
 
 ##Editing Words <a id="editing"></a>
 
-###PUT /edit
+###PUT word/edit
 
 **Params**
 
