@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post "/login", to: "registrations#login"
   delete "/delete", to: "registrations#destroy"
 
+  post "/words/create", to: "words#creates"
   post "/create", to: "words#create"
   put "word/edit", to: "words#edit"
 

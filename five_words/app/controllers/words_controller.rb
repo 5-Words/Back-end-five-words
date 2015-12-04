@@ -12,15 +12,22 @@ class WordsController < ApplicationController
 		 													category: params[:category])
 		 current_user.words.create(word: params[:five],
 		 													category: params[:category])
-		#binding.pry
-		#@words = params[:words].map do |word|
-		#	begin
-		#		current_user.words.create!(word: word,
-		#			                         category: params[:category])
-		#	rescue ActiveRecord::SaveFailure
-		#		render json: { message: "Couldn't save supplied words." }, status: :unproccessable_entity
-		#	end
-    #end
+		@words= current_user.words
+		render "word_create.json.jbuilder"
+	end
+
+	def creates
+		@words = params[:words]
+		
+		@words.map do |word|
+			begin
+				current_user.words.create!(word: word,
+					                         category: params[:category])
+			rescue ActiveRecord::SaveFailure
+				render json: { message: "Couldn't save supplied words." }, status: :unproccessable_entity
+			end
+    end
+    #binding.pry
     @words= current_user.words
 		render "word_create.json.jbuilder"
 	end
