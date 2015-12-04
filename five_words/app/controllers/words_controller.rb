@@ -52,12 +52,16 @@ class WordsController < ApplicationController
 	end
 
 	def edit
-		@words = Word.find_by(id: params[:id])
-			
-		@words.update(word: params[:word])
+		
+		params[:words].each do |new_word|
+			word = Word.find(new_word[:id])
+			word.update(word: new_word[:new])
+		end
+
+		#@words.update(word: params[:word])
 		#binding.pry
-		#render "word_create.json.jbuilder"
-			render json: {message: "#{@words.word} has been updated"}, status: :ok
+		render "word_create.json.jbuilder"
+			#render json: {message: "#{@words.word} has been updated"}, status: :ok
 	end
 	
 

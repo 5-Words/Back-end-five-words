@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post "/words/create", to: "words#creates"
   post "/create", to: "words#create"
-  put "word/edit", to: "words#edit"
+  put "words/edit", to: "words#edit"
 
   #get "/words/match", to: "words#match"
   #get "/words/category", to: "words#search_category"
