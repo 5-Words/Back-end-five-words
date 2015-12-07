@@ -18,7 +18,6 @@ class WordsController < ApplicationController
 
 	def creates
 		@words = params[:words]
-		
 		@words.map do |word|
 			begin
 				current_user.words.create!(word: word,
@@ -27,7 +26,6 @@ class WordsController < ApplicationController
 				render json: { message: "Couldn't save supplied words." }, status: :unproccessable_entity
 			end
     end
-    #binding.pry
     @words= current_user.words
 		render "word_create.json.jbuilder"
 	end
@@ -45,23 +43,21 @@ class WordsController < ApplicationController
 	end
 
 	def user_words
-			@words = Word.where(user_id: params[:user_id],
-													category: params[:category])
-			#binding.pry
-			render "word_create.json.jbuilder"
+		word_hash = Word.where(category: params[:category])
+		@matches = word_hash.each do |match|
+			 Word.where(match[:word], category: params[:category])
+		end
+		#binding.pry
+
+			render "matches.json.jbuilder"
 	end
 
 	def edit
-		
 		params[:words].each do |new_word|
 			word = Word.find(new_word[:id])
 			word.update(word: new_word[:new])
 		end
-
-		#@words.update(word: params[:word])
-		#binding.pry
 		render "word_create.json.jbuilder"
-			#render json: {message: "#{@words.word} has been updated"}, status: :ok
 	end
 	
 
