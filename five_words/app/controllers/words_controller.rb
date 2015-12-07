@@ -42,14 +42,23 @@ class WordsController < ApplicationController
 				render "word_create.json.jbuilder"
 	end
 
-	def user_words
-		word_hash = Word.where(category: params[:category])
-		@matches = word_hash.each do |match|
-			 Word.where(word: match[:word], category: params[:category])
-		end
+	def user_category
+		@words = current_user.words.where(category: params[:category])
+		render "word_create.json.jbuilder"
 		#binding.pry
+	end
 
-			render "matches.json.jbuilder"
+	def user_words
+		@words = current_user.words.where(category: params[:category])
+
+		@matches = Word.where(word: [@words], category: params[:category])
+		      
+
+		# ver 1: get the user for each match
+		# ver 2: group/order them by user
+		# we might consider eager loading associations
+		#binding.pry	
+		render "matches.json.jbuilder"
 	end
 
 	def edit
