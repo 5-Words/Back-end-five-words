@@ -57,7 +57,6 @@ class WordsController < ApplicationController
 	  # ver 1: get the user for each match
 		# ver 2: group/order them by user
 		# we might consider eager loading associations
-		
 		render "matches.json.jbuilder"
 	end
 

@@ -60,12 +60,8 @@ This is where the user lists thier 5 words of interest for a category
 
 **Params**
 
-* `one:`
-* `two:`
-* `three:`
-* `four:`
-* `five:`
-* `category:`
+`{word: => [dog, cat, chicken, snake, bird], 
+  category: => "animals"}`
 
 This will return this json which is all the current words in a category across all users
 ```
@@ -106,7 +102,13 @@ This will return this json which is all the current words in a category across a
 
 ##Searching Users <a id="search"></a>
 
-There are three different routes for searching users
+###GET "/words/matches/category"
+
+####Access token must be passed in the header
+
+**Params**
+
+* `category:` This is the category you are searching for the current user
 
 ###GET "/words/:user_id/:category"
 
