@@ -45,7 +45,7 @@ class WordsController < ApplicationController
 	def user_words
 		word_hash = Word.where(category: params[:category])
 		@matches = word_hash.each do |match|
-			 Word.where(match[:word], category: params[:category])
+			 Word.where(word: match[:word], category: params[:category])
 		end
 		#binding.pry
 
