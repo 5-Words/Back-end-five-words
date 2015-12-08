@@ -50,11 +50,11 @@ Rails.application.configure do
 
   #Paperclip.options[:command_path] = "/usr/local/bin/convert"
   config.paperclip_defaults = {
-    storage: s3
+    storage: :s3,
     s3_credentials: {
       access_key_id: ENV["S3_ACCESS_KEY"],
       secret_access_key: ENV["S3_SECRET_KEY"],
-      bucket: ENV["S3_PROD_BUCKET"],
+      bucket: ENV["S3_PROD_BUCKET"]
     }
   }
 
