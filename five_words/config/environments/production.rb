@@ -49,14 +49,14 @@ Rails.application.configure do
   config.log_level = :debug
 
   #Paperclip.options[:command_path] = "/usr/local/bin/convert"
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      access_key_id: ENV["S3_ACCESS_KEY"],
-      secret_access_key: ENV["S3_SECRET_KEY"],
-      bucket: ENV["S3_PROD_BUCKET"]
-    }
-  }
+  #config.paperclip_defaults = {
+  #  storage: :s3,
+  #  s3_credentials: {
+  #    access_key_id: ENV["S3_ACCESS_KEY"],
+  #    secret_access_key: ENV["S3_SECRET_KEY"],
+  #    bucket: ENV["S3_PROD_BUCKET"]
+  #  }
+  #}
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
