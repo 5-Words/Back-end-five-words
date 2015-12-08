@@ -53,8 +53,7 @@ class WordsController < ApplicationController
 		
 		@matches = Word.where(word: [words[0]["word"], words[1]["word"],
 																 words[2]["word"], words[3]["word"],
-																 words[4]["word"]]),
-								where.not(user_id: current_user.id)
+																 words[4]["word"]])
 	  # ver 1: get the user for each match
 		# ver 2: group/order them by user
 		# we might consider eager loading associations
