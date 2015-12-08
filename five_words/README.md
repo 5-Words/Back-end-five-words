@@ -36,7 +36,7 @@ This will return this json response
 }
 ```
 
-##Sign In < id="sign_in"></a>
+##Sign In <a id="sign_in"></a>
 
 ###POST /login
 
@@ -60,8 +60,10 @@ This is where the user lists thier 5 words of interest for a category
 
 **Params**
 
-`{word: => [dog, cat, chicken, snake, bird], 
-  category: => "animals"}`
+The required params are two keys. `word:`, and `category:`. `word:` points to an array of words you want to create and `category:` is the category it is going into. Please note a word can only be entered into an [allowed category](#allowed_categories).
+
+```{word: => [dog, cat, chicken, snake, bird], 
+    category: => "animals"}```
 
 This will return this json which is all the current words in a category across all users
 ```
@@ -97,18 +99,29 @@ This will return this json which is all the current words in a category across a
 
 **Params**
 
-* `id:` The id of the word you wish to edit
-* `word:` What you wish to cange the word to
+An array of hashes containing the word id `id:` and what you want to change that word to `new:`
+
+```{
+	  words => [
+					    {id: => 1, new: => "koala"},
+					    {id: => 2, new: => "tiger"},
+					    {id: => 3, new: => "kangaroo"},
+					    {id: => 4, new: => "dragon"},
+					    {id: => 5, new: => "python"}
+					   ]
+	  }```
 
 ##Searching Users <a id="search"></a>
 
-###GET "/words/matches/category"
+###GET "/words/matches/:category"
 
 ####Access token must be passed in the header
 
 **Params**
 
-* `category:` This is the category you are searching for the current user
+* `category:` This is the category you are finding matches for.
+
+This will return json of words that match any words in the specified catagory with the `user_id:` associated with that word
 
 ###GET "/words/:user_id/:category"
 
@@ -134,7 +147,11 @@ This will return this json which is all the current words in a category across a
 
 ###GET "/match/:word/:category/"
 
-####This will return user information by matching words that are in the specified category
+####This will return user information by matching words that are in the specified word and category
+
+###Allowed Category<a id="allowed_categories"></a>
+
+travel, golden, tech, sports, foodie, cars, books, music, film, pets
 
 
 
