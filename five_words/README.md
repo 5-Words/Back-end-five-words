@@ -113,7 +113,7 @@ An array of hashes containing the word id `id:` and what you want to change that
               {id: => 3, new: => "kangaroo"},
               {id: => 4, new: => "dragon"},
               {id: => 5, new: => "python"}
-					   ]
+              ]
 	  }
 ```
 
