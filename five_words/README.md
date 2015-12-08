@@ -155,7 +155,7 @@ This will return json of words that match any words in the specified catagory wi
 
 ####This will return user information by matching words that are in the specified word and category
 
-###Allowed Categories<a id="allowed_categories"></a>
+###Allowed Categories <a id="allowed_categories"></a>
 
 travel, golden, tech, sports, foodie, cars, books, music, film, pets
 
