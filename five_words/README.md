@@ -13,6 +13,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 3. [Add words to Categories](#create_words)
 4. [Matching Words](#search)
 5. [Editing Words](#editing)
+6. [Allowed Categories](#allowed_categories)
 
 ##Create User <a id="create_user"></a>
 
@@ -60,7 +61,7 @@ This is where the user lists thier 5 words of interest for a category
 
 **Params**
 
-The required params are two keys. `word:`, and `category:`. `word:` points to an array of words you want to create and `category:` is the category it is going into. Please note a word can only be entered into an [allowed category](#allowed_categories).
+The required params are two keys. `word:`, and `category:`. `word:` points to an array of words you want to create and `category:` is the category it is going into. Please note that category must be an <i>allowed category</i>.
 
 ```
    {
