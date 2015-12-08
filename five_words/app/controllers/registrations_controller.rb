@@ -42,6 +42,7 @@ class RegistrationsController < ApplicationController
 
 	def add_avatar
 		@avatar = current_user.update(avatar: params[:avatar])
+		binding.pry
 	end
 
 end
