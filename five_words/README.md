@@ -62,7 +62,8 @@ This is where the user lists thier 5 words of interest for a category
 
 The required params are two keys. `word:`, and `category:`. `word:` points to an array of words you want to create and `category:` is the category it is going into. Please note a word can only be entered into an [allowed category](#allowed_categories).
 
-```{
+```
+   {
     word: => [dog, cat, chicken, snake, bird], 
     category: => "animals"
    }
