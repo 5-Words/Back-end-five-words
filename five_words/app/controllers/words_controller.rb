@@ -64,8 +64,9 @@ class WordsController < ApplicationController
 		params[:words].each do |new_word|
 			word = Word.find(new_word[:id])
 			word.update(word: new_word[:new])
+			render "word_create.json.jbuilder"
 		end
-		render "word_create.json.jbuilder"
+		#render "word_create.json.jbuilder"
 	end
 	
 
