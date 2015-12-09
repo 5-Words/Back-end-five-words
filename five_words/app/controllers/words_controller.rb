@@ -21,7 +21,8 @@ class WordsController < ApplicationController
 		@words.map do |word|
 			begin
 				current_user.words.create!(word: word,
-					                         category: params[:category])
+					                         category: params[:category],
+					                         username: params[:username])
 			rescue ActiveRecord::SaveFailure
 				render json: { message: "Couldn't save supplied words." }, status: :unproccessable_entity
 			end
