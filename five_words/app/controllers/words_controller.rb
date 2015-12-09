@@ -50,7 +50,7 @@ class WordsController < ApplicationController
 
 	def user_words
 		words = current_user.words.where(category: params[:category])
-		binding.pry
+		
 		@matches = Word.where(word: [words[0]["word"], words[1]["word"],
 																 words[2]["word"], words[3]["word"],
 																 words[4]["word"]]).where.not(user_id: current_user.id)

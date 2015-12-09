@@ -1,14 +1,20 @@
 class User < ActiveRecord::Base
 	has_many :words
 	has_secure_password
-	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
+										:bucket => ENV["S3_TEST_BUCKET"]
+
+  validates_attachment_file_name :avatar, matches: [
+    /mp3\Z/, /ogg\Z/, /flac\Z/, /pdf\Z/, /epub\Z/, /djvu\Z/,
+    /gif\Z/, /gifv\Z/, /mp4\Z/, /mkv\Z/, /avi\Z/, /webm\Z/,
+    /jpg\Z/, /jpeg\Z/, /png\Z/
+  ]
 
 
 
 
 	before_validation :ensure_access_token!
-	validates_presence_of :username, :password 
+	#validates_presence_of :username, :password 
 	validates_uniqueness_of :username
 	validates_format_of :email, with: /.+@.+\..+/
 	validates :access_token, presence: true, uniqueness: true
