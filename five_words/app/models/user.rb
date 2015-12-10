@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :words
+	has_many :images
 	has_secure_password
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
 										:bucket => ENV["S3_TEST_BUCKET"]
