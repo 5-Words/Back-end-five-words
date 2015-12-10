@@ -65,7 +65,8 @@ class WordsController < ApplicationController
 	def edit
 		params[:words].each do |new_word|
 			word = Word.find(new_word[:id])
-			word.update(word: new_word[:new])
+			word.update(word: new_word[:new],
+				          username: current_user.username)
 		end
 		render "word_create.json.jbuilder"
 	end

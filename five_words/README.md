@@ -103,6 +103,8 @@ This will return this json which is all the current words in a category across a
 
 ###PUT word/edit
 
+###Access token must be passed in the headers
+
 **Params**
 
 An array of hashes containing the word id `id:` and what you want to change that word to `new:`
