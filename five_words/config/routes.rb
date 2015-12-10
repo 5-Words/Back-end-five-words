@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   #get "/words/category", to: "words#search_category"
   #get "/users/:id/words", to: "words#user_words"
 
+  post "user/gallery", to: "images#add"
+
   get "/words/user/:category", to: "words#user_category"
   get "/words/matches/:category", to: "words#user_words"
   get "/words/:category", to: "words#user_words"
