@@ -1,1 +1,1 @@
-json.array! @word, :word, :category
+json.array! @word, :word, :category, :username

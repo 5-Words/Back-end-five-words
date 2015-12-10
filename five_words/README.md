@@ -14,6 +14,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 4. [Matching Words](#search)
 5. [Editing Words](#editing)
 6. [Allowed Categories](#allowed_categories)
+7. [Uploading Pictures](#uploads)
 
 ##Create User <a id="create_user"></a>
 
@@ -159,6 +160,41 @@ This will return json of words that match any words in the specified catagory wi
 ###Allowed Categories <a id="allowed_categories"></a>
 
 travel, golden, tech, sports, foodie, cars, books, music, film, pets
+
+###Picture Uploads<a id="uploads"></a>
+
+###POST user/gallery
+
+####Auth token must be passed in the header
+
+**Params**
+
+
+* `image:` Must be a .jpg, .jpeg, .png, .gif, gifv and cannot be null
+* `title:` String
+
+if sucessfull will return `{message: "Imaged Saved"}, status: :ok`
+
+###GET /user/gallery
+
+####Auth token must be passed in the header
+
+And will return this json with `image_url:`
+
+```
+[
+  {
+    "image_file_name": "ninja.png",
+    "image_updated_at": "2015-12-10T15:18:29.411Z",
+    "image_url": "http://fivewords-test.s3.amazonaws.com/images/images/000/000/001/medium/ninja.png?1449760709"
+  },
+  {
+    "image_file_name": "Octocat.png",
+    "image_updated_at": "2015-12-10T16:01:08.051Z",
+    "image_url": "http://fivewords-test.s3.amazonaws.com/images/images/000/000/002/medium/Octocat.png?1449763268"
+  }
+]
+```
 
 
 
