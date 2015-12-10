@@ -5,6 +5,15 @@ class ImagesController < ApplicationController
 		if @image.save
 			render json: {message: "Imaged Saved"}, status: :ok
 		end
-
 	end
+
+		def index 
+			@images = current_user.images
+			render "gallery.json.jbuilder"
+
+	  end
+
+
+
+
 end
