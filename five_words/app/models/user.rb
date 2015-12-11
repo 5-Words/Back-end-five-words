@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
 
 
 
-
+  validates :gender, inclusion: {in: %w(male female other complicated),
+  	message: "%{gender} is not a valid gender" }
 	before_validation :ensure_access_token!
 	#validates_presence_of :username, :password 
 	validates_uniqueness_of :username

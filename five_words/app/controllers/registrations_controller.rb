@@ -41,8 +41,10 @@ class RegistrationsController < ApplicationController
 	end
 
 	def add_avatar
-		user = User.find_by(id: params[:id])
-		user.update(avatar: params[:avatar])
+		current_user.update(avatar: params[:avatar])
+		if current_user.save
+			render json: {message: "profile picture updated"}, status: :ok
+		end
 		
 	end
 

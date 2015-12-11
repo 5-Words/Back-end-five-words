@@ -18,8 +18,13 @@ Rails.application.routes.draw do
 
   post "/signup", to: "registrations#create"
   post "/login", to: "registrations#login"
-  put "/update/:id/avatar", to: "registrations#add_avatar"
+  put "/user/avatar", to: "registrations#add_avatar"
   delete "/delete", to: "registrations#destroy"
+
+  get "user/profile/public/:username", to: "users#user_profile"
+  get "user/profile/private", to: "users#private_profile"
+
+  put "/user/edit", to: "users#edit"
 
   post "/words/create", to: "words#creates"
   post "/create", to: "words#create"
