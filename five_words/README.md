@@ -252,7 +252,10 @@ This will return
 * `phone_number:`
 * `location:`
 
-
+if succesfull it will return
+```
+json: {message: "user updated"}, status: :ok
+```
 
 
 
