@@ -16,6 +16,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 6. [Allowed Categories](#allowed_categories)
 7. [Uploading Pictures](#uploads)
 8. [Viewing User Public Profile](#public_profile)
+9. [Editing User Profile](#edit_user)
 
 ##Create User <a id="create_user"></a>
 
@@ -235,6 +236,24 @@ This will return
   "picture": "http://fivewords-test.s3.amazonaws.com/users/avatars/000/000/007/original/ninja.png?1449862435"
 }
 ```
+
+###Edit user profile<a id="edit_user"></a>
+
+####Auth token must be passed in the header
+
+###PUT /user/edit
+
+**Params**
+
+* `name:`
+* `email:`
+* `bio:`
+* `birthday:`
+* `phone_number:`
+* `location:`
+
+
+
 
 
 
