@@ -15,6 +15,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 5. [Editing Words](#editing)
 6. [Allowed Categories](#allowed_categories)
 7. [Uploading Pictures](#uploads)
+8. [Viewing User Public Profile](#public_profile)
 
 ##Create User <a id="create_user"></a>
 
@@ -197,6 +198,45 @@ And will return this json with `image_url:`
   }
 ]
 ```
+
+###Getting User data<a id="public_profile"></a>
+
+To get a users public profile
+
+####GET /user/profile/public/:username
+
+**Params**
+
+`username:` This is the users unique `username:` and will return
+
+```
+{
+  "email": "js@js.com",
+  "bio": null,
+  "picture": "http://fivewords.s3.amazonaws.com/users/avatars/000/000/002/original/ruby-3b.png?1449877362"
+}
+```
+
+To get a users private profile the access token must be passed in the header(user must be logged in)
+
+####GET /user/profile/private
+
+This will return
+
+```
+{
+  "name": "Charlie",
+  "email": "kittens@mittens.com",
+  "bio": "I am awesomness incarnate",
+  "birthday": "12/22/80",
+  "phone_number": "555-555-5555",
+  "location": "atl, ga",
+  "gender": "male",
+  "picture": "http://fivewords-test.s3.amazonaws.com/users/avatars/000/000/007/original/ninja.png?1449862435"
+}
+```
+
+
 
 
 
