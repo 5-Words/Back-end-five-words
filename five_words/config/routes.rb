@@ -43,6 +43,10 @@ Rails.application.routes.draw do
   get "/category/:category", to: "words#search_category"
   get "/match/:word/:category", to: "words#match"
 
+  post "/user/add_freind", to: "friends#add"
+
+  post "/user/message", to: "messages#new"
+
   # Example resource route with options:
   #   resources :products do
   #     member do

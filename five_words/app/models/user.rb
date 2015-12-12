@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :words
 	has_many :images
+	has_many :friends
+	has_many :messages
 	has_secure_password
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
 										:bucket => ENV["S3_TEST_BUCKET"]
@@ -13,7 +15,7 @@ class User < ActiveRecord::Base
 
 
 
-  
+
 	before_validation :ensure_access_token!
 	#validates_presence_of :username, :password 
 	validates_uniqueness_of :username
