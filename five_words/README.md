@@ -15,9 +15,11 @@ This is an API for my teams application called 5-Words. This database stores a u
 5. [Editing Words](#editing)
 6. [Allowed Categories](#allowed_categories)
 7. [Uploading Pictures](#uploads)
-8. [Viewing User Public Profile](#public_profile)
-9. [Editing User Profile](#edit_user)
-10. [Adding and Viewing Friends](#add_friend)
+8. [Deleting Pictures](#image_delete)
+9. [Viewing User Public Profile](#public_profile)
+10. [Editing User Profile](#edit_user)
+11. [Adding and Viewing Friends](#add_friend)
+
 
 ##Create User <a id="create_user"></a>
 
@@ -178,9 +180,9 @@ travel, golden, tech, sports, foodie, cars, books, music, film, pets
 * `image:` Must be a .jpg, .jpeg, .png, .gif, gifv and cannot be null
 * `title:` String
 
-if sucessfull will return `{message: "Imaged Saved"}, status: :ok`
+If sucessfull will return `{message: "Imaged Saved"}, status: :ok`
 
-###Deleting Pictures
+###Deleting Pictures <a id="image_delete"></a>
 
 ####Authtoken must be passed in the header
 
@@ -189,6 +191,8 @@ if sucessfull will return `{message: "Imaged Saved"}, status: :ok`
 **Params**
 
 * `id:` The `image:` id of the image you wish to delete
+
+If sucessfull will return `{message: "Image deleted"}, status: :ok`
 
 ###GET /user/gallery
 
@@ -294,13 +298,13 @@ This will return this json
 ```
  {
     "username": "Charlie",
-    "email": null,
+    "email": mitten@destroyer.com,
     "id": 2,
     "user_id": 7
   },
   {
     "username": "Chuckles",
-    "email": null,
+    "email": kittens@destroyer.com,
     "id": 3,
     "user_id": 7
   }
@@ -324,6 +328,7 @@ If user is on your friends list will return
   "bio": awesomeness,
   "username": "Charlie"
 }
+```
 
 
 
