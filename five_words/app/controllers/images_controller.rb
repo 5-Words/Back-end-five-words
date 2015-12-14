@@ -14,7 +14,8 @@ class ImagesController < ApplicationController
 
 	 def destroy
 	 image = Image.find_by(id: params[:id])
-	 	if current_user.id == image[0]["user_id"]
+	 
+	 	if current_user.id == image.user_id
 	 	image.destroy
 	 		render json: {message: "Image deleted"}, status: :ok
 	 	else

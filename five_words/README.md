@@ -17,6 +17,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 7. [Uploading Pictures](#uploads)
 8. [Viewing User Public Profile](#public_profile)
 9. [Editing User Profile](#edit_user)
+10. [Adding and Viewing Friends](#add_friend)
 
 ##Create User <a id="create_user"></a>
 
@@ -165,7 +166,7 @@ This will return json of words that match any words in the specified catagory wi
 
 travel, golden, tech, sports, foodie, cars, books, music, film, pets
 
-###Picture Uploads<a id="uploads"></a>
+###Picture Uploads <a id="uploads"></a>
 
 ###POST user/gallery
 
@@ -200,7 +201,7 @@ And will return this json with `image_url:`
 ]
 ```
 
-###Getting User data<a id="public_profile"></a>
+###Getting User data <a id="public_profile"></a>
 
 To get a users public profile
 
@@ -237,7 +238,7 @@ This will return
 }
 ```
 
-###Edit user profile<a id="edit_user"></a>
+###Edit user profile <a id="edit_user"></a>
 
 ####Auth token must be passed in the header
 
@@ -256,6 +257,47 @@ if succesfull it will return
 ```
 json: {message: "user updated"}, status: :ok
 ```
+
+###Adding Friends <a id="friends"></a>
+
+####POST /user/add_friend/:username
+
+**Params**
+
+* `username:` The unique `:username` of the friend you wish to add to your friends list
+
+If sucessfull will return 
+```
+{message: "Friend added"}, status: :ok
+```
+
+###Viewing friends list
+
+####GET /user/friends
+
+####Auth token must be passed in the headers
+
+This will return this json
+
+```
+ {
+    "username": "Charlie",
+    "email": null,
+    "id": 2,
+    "user_id": 7
+  },
+  {
+    "username": "Chuckles",
+    "email": null,
+    "id": 3,
+    "user_id": 7
+  }
+  ```
+
+  ###Viewing 
+
+
+
 
 
 

@@ -13,7 +13,10 @@ class FriendsController < ApplicationController
 	end
 
 	def friend_profile
-		@profile = User.find_by(username: params[:username])
-		render "friend_profile.json.jbuilder"
+		friend = Friend.where(username: params[:username])
+		if current_user.id == friend[0]["user_id"]
+			@profile = User.find_by(username: params[:username])
+			render "friend_profile.json.jbuilder"
+		end
 	end	
 end
