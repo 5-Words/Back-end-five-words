@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_attachment_file_name :avatar, matches: [
     /mp3\Z/, /ogg\Z/, /flac\Z/, /pdf\Z/, /epub\Z/, /djvu\Z/,
     /gif\Z/, /gifv\Z/, /mp4\Z/, /mkv\Z/, /avi\Z/, /webm\Z/,
-    /jpg\Z/, /jpeg\Z/, /png\Z/
+    /jpg\Z/, /jpeg\Z/, /png\Z/, /JPG\Z/, /JPEG\Z/
   ]
 
 
