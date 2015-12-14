@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	def user_profile
 		@user = User.find_by(username: params[:username])
+		
 		render "public_profile.json.jbuilder"
 	end
 
