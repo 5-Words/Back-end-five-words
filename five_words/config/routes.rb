@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   post "user/gallery", to: "images#add"
   get "user/gallery", to: "images#index"
+  get "user/image/:id", to: "images#image"
   delete "image/destroy/:id", to: "images#destroy"
 
   get "/words/user/:category", to: "words#user_category"

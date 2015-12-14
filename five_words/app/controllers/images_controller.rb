@@ -18,4 +18,25 @@ class ImagesController < ApplicationController
 	 	render json: {message: "Image deleted"}, status: :ok
 	 end
 
+	 def image
+	 	@image = Image.where(id: params[:id])
+	 	#binding.pry
+	 	if current_user.images.exists?(@image)
+	 		render "image.json.jbuilder"
+	 	else
+	 		render json: {message: "You do not have access to this image"}, status: :unauthorized
+	 	end
+	 end
+
 end
+
+
+
+
+
+
+
+
+
+
+
