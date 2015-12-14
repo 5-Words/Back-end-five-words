@@ -18,7 +18,7 @@ This is an API for my teams application called 5-Words. This database stores a u
 8. [Deleting Pictures](#image_delete)
 9. [Viewing User Public Profile](#public_profile)
 10. [Editing User Profile](#edit_user)
-11. [Adding and Viewing Friends](#add_friend)
+11. [Adding and Viewing Friends](#friends)
 
 
 ##Create User <a id="create_user"></a>
