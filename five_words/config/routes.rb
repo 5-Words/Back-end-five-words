@@ -45,6 +45,7 @@ Rails.application.routes.draw do
 
   post "/user/add_friend", to: "friends#add"
   get "user/friends", to: "friends#index"
+  get "friend/profile/:username", to: "friends#friend_profile"
 
   post "/user/message", to: "messages#new"
 
