@@ -10,10 +10,12 @@ class ImagesController < ApplicationController
 		def index 
 			@images = current_user.images
 			render "gallery.json.jbuilder"
+	 end
 
-	  end
-
-
-
+	 def destroy
+	 image = Image.find_by(id: params[:id])
+	 image.destroy
+	 	render json: {message: "Image deleted"}, status: :ok
+	 end
 
 end
