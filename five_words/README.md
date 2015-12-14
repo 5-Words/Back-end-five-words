@@ -180,6 +180,16 @@ travel, golden, tech, sports, foodie, cars, books, music, film, pets
 
 if sucessfull will return `{message: "Imaged Saved"}, status: :ok`
 
+###Deleting Pictures
+
+####Authtoken must be passed in the header
+
+####DELETE /image/destroy/:id
+
+**Params**
+
+* `id:` The `image:` id of the image you wish to delete
+
 ###GET /user/gallery
 
 ####Auth token must be passed in the header
@@ -260,6 +270,8 @@ json: {message: "user updated"}, status: :ok
 
 ###Adding Friends <a id="friends"></a>
 
+####Auth token must be passed in the headers
+
 ####POST /user/add_friend/:username
 
 **Params**
@@ -292,9 +304,28 @@ This will return this json
     "id": 3,
     "user_id": 7
   }
-  ```
+```
 
-  ###Viewing 
+###Viewing a friends profile
+
+####GET /friend/profile/:username
+
+####Auth token must be passed in the header
+
+**Params**
+`username:` The friends profile you wish to view
+
+If user is on your friends list will return
+
+```
+{
+  "name": CharlesCharlie,
+  "email": "kittens@mittens.com",
+  "bio": awesomeness,
+  "username": "Charlie"
+}
+
+
 
 
 
