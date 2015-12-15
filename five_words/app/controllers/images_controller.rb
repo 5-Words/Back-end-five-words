@@ -12,14 +12,9 @@ class ImagesController < ApplicationController
 			render "gallery.json.jbuilder"
 	  end
 
-	  def friend_images
-	  	
-	  end
-
 	 def destroy
 	 image = Image.find_by(id: params[:id])
-	 
-	 	if current_user.id == image.user_id
+		if current_user.id == image.user_id
 	 	image.destroy
 	 		render json: {message: "Image deleted"}, status: :ok
 	 	else
