@@ -16,7 +16,7 @@ class FriendsController < ApplicationController
 				render json: {message: "You cannot delete this friend"}, status: :unauthorized
 		end
 	end
-	
+
 	def index
 		@friends = current_user.friends
 		render "friends.json.jbuilder"
@@ -34,7 +34,6 @@ class FriendsController < ApplicationController
 		if current_user.id == friend[0]["user_id"]
 			profile = User.find_by(username: params[:username])
 			@images = Image.where(user_id: profile.id)
-			binding.pry
 			render "friend_gallery.json.jbuilder"
 		end
 	end
