@@ -10,7 +10,11 @@ class ImagesController < ApplicationController
 		def index 
 			@images = current_user.images
 			render "gallery.json.jbuilder"
-	 end
+	  end
+
+	  def friend_images
+	  	
+	  end
 
 	 def destroy
 	 image = Image.find_by(id: params[:id])
