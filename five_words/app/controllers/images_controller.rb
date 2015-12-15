@@ -34,7 +34,6 @@ class ImagesController < ApplicationController
 
 	 def friend_image
 	 	@image = Image.where(id: params[:id])
-	 	
 	 	render "single_image.json.jbuilder"
 	 end
 end
