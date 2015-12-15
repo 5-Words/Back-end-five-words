@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get "/match/:word/:category", to: "words#match"
 
   post "/user/add_friend/:username", to: "friends#add"
+  delete "friend/destroy",
   get "user/friends", to: "friends#index"
   get "friend/profile/:username", to: "friends#friend_profile"
   get "friend/gallery/:username", to: "friends#friend_gallery"
