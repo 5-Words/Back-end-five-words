@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
 	end
 
 	def destroy
-		friend = Friend.find_by(id: params[:id])
+		friend = Friend.find_by(username: params[:username])
 		if current_user.id == friend.user_id
 			friend.destroy
 				render json: {message: "Friend deleted"}, status: :ok
