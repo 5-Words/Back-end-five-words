@@ -2,10 +2,15 @@ class UsersController < ApplicationController
 
 	def user_profile
 		@user = User.find_by(username: params[:username])
-		
+
 		render "public_profile.json.jbuilder"
 	end
 
+	def all
+		@users = User.all
+		#binding.pry
+		render "all.json.jbuilder"
+	end
 	def private_profile
 		@user = current_user
 		render "private_profile.json.jbuilder"
