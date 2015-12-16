@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 	has_many :messages
 	has_secure_password
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
-										:bucket => ENV["S3_TEST_BUCKET"]
-										#:default_url => "http://fivewords.s3.amazonaws.com/users/avatars/000/000/002/original/ruby-3b.png?1449877362"
+										:bucket => ENV["S3_TEST_BUCKET"],
+										:default_url => "http://www.gifpage.com/wp-content/uploads/2015/02/tumblr_njsbzl7VnD1tlb56zo1_400.gif"
 
   validates_attachment_file_name :avatar, matches: [
     /mp3\Z/, /ogg\Z/, /flac\Z/, /pdf\Z/, /epub\Z/, /djvu\Z/,
