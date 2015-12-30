@@ -1,5 +1,7 @@
 == README
 
+[![Build Status](https://travis-ci.org/calderete/Back-end-five-words.svg)](https://travis-ci.org/calderete/smashitt)
+
 ##5-Words
 
 This is an API for my teams application called 5-Words. This database stores a users interests and matches them to other users with the same interests.
