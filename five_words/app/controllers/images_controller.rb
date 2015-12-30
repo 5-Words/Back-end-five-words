@@ -37,7 +37,7 @@ class ImagesController < ApplicationController
 	 	render "single_image.json.jbuilder"
 	 end
 end
-
+$
 
 
 

@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
 
 	def index
-		render plain: "Hello World"
+		render :welcome
 	end
 
 	def create
