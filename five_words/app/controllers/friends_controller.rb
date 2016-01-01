@@ -30,19 +30,19 @@ class FriendsController < ApplicationController
 		end
 	end	
 
-	#def friend_gallery
-	#	user = User.find_by(username: params[:username])
-	#	@images = user.images
-	#	render "friend_gallery.json.jbuilder"
-	#end
 	def friend_gallery
-		friend = Friend.where(username: params[:username])
 		user = User.find_by(username: params[:username])
-		if current_user.id == friend[0]["user_id"]
-			@images = user.images
-			render "friend_gallery.json.jbuilder"
-		end
+		@images = user.images
+		render "friend_gallery.json.jbuilder"
 	end
+	#def friend_gallery
+	#	friend = Friend.where(username: params[:username])
+	#	user = User.find_by(username: params[:username])
+	#	if current_user.id == friend[0]["user_id"]
+	#		@images = user.images
+	#		render "friend_gallery.json.jbuilder"
+	#	end
+	#end
 
 
 end
