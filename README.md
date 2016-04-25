@@ -1,0 +1,1 @@
+API documentation is <a href="https://github.com/5-Words/Back-end-five-words/blob/master/five_words/README.md">here</a>
